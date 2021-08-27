@@ -39,10 +39,9 @@ export default class Hangman {
         const arr = word.split(' ');
         
         return arr.map((segment) =>  {
-            segment = segment.split('');
             const span = document.createElement('span');
             span.className = "hangman__word__segment";
-            span.append(...segment.map(this.createLetterElement));
+            span.append(...segment.split('').map(this.createLetterElement));
             return span;
         });
 
