@@ -13,19 +13,18 @@
     <link rel="shortcut icon" href="images/favicon-2.svg" type="image/x-icon">
 </head>
 <body>
-    <aside id="loading" class="loading loading--in-process">
-        <p class="loading__message">Loading...</p>
-    </aside>
     <main class="holder">
-        <header>
-            <h1 id="logo" class="logo">Hangman</h1>
-            <button id="hangman__reset" class="hangman__reset">Reset</button>
+        <header class="header">
+            <h1 id="logo" class="header__logo">Hangman</h1>
+            <button id="reset" class="header__reset">Reset</button>
         </header>
         <article id="hangman" class="hangman">
-            <section>
-                <p id="hangman__guesses-left" class="hangman__guesses-left">Guesses Left: <span id="hangman__guesses-left__value"></span></p>
-                <output id="hangman__word" class="hangman__word"></output>
-            </section>
+            <figure class="hangman__image">
+                <img src="images/hangman-test-1.svg" alt=""> <!-- ! This is temporary, will be changing/stacked image later -->
+                <figcaption id="hangman__guesses-left" class="hangman__guesses-left">Guesses Left: <span id="hangman__guesses-left__value"></span></figcaption>
+            </figure>
+
+            <output id="hangman__word" class="hangman__word"></output>
 
             <article class="hangman__keys" id="keys"></article>
 

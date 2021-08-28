@@ -8,6 +8,10 @@
     gap: 0.2em;
     max-width: 100%;
     margin-block: 3rem;
+
+    &__image {
+      width: 8rem;
+    }
     
     &__word {
       display: flex;
@@ -35,41 +39,78 @@
         }
       }
     }
+
     &__guesses-left {
       font-size: var(--fs-body-2);
       color: var(--primary-light-1);
       font-weight: 400;
       font-style: italic;
     }
-    &__reset {
-      display: flex;
-      place-items: center;
-      border: 0;
-      height: max-content;
-      width: max-content;
-      padding: 0.3em 2em;
     
-      font-size: var(--fs-button-2);
-      font-family: var(--ff-primary);
-      font-weight: 500;
-      color: var(--background);
-      border-radius: 1em;
-      background: var(--accent);
-    }
     &__keys {
+      --board-background: hsl(0, 0%, 91%);
+      --key-background: hsl(0, 0%, 98%);
+      --key-background--disabled: hsl(0, 0%, 94%);
+      --key-background--focus: hsl(0, 0%, 96%);
+      --key-border: hsl(0, 0%, 80%);
+      --key-colour: hsl(0, 0%, 35%);
+
       display: flex;
       flex-direction: column;
-      gap: 0.5em;
+      gap: 0.75em;
+      width: min(30rem, 100vw);
+      padding-block: 0.75em 1em;
+
+      background-color: var(--board-background);
+      border-radius: 0.25em;
 
       &__row {
         display: flex;
-        flex-direction: row;
         justify-content: center;
-        gap: 0.5em;
+        flex-flow: row wrap;
+        gap: 1.5%;
+        width: 100%;
         
         & .key {
-          width: 1.2em;
-          font-size: var(--fs-button-1);
+          display: inline-flex;
+          flex: 1 1 100%;
+          justify-content: flex-start;
+          align-items: flex-start;
+          flex-direction: column;
+
+          background-color: var(--key-background);
+          color: var(--key-colour);
+
+          border: none;
+          border-bottom: solid 0.15em var(--key-border);
+          border-radius: 0.25em;
+
+          font-size: var(--fs-button-2);
+          font-weight: 600;
+          font-family: var(--ff-accent);
+
+          padding: 0.2em 0.4em;
+          max-width: 8%;
+          height: 2.3em;
+
+          transition: border 100ms ease-out;
+
+          &[data-clicked=incorrect] {
+            color: red;
+          }
+          
+          &[data-clicked=correct] {
+            color: limegreen;
+          }
+          
+          &:disabled {
+            background-color: var(--key-background--disabled);
+            border-bottom-width: 0em;
+          }
+
+          &:focus {
+            background-color: var(--key-background--focus);
+          }
         }
       }
     }

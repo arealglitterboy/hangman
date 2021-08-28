@@ -19,6 +19,7 @@
     "core-js": "^3.16.2",
     "live-server": "^1.2.1",
     "regenerator-runtime": "^0.13.9",
+    "sweetalert": "^2.1.2",
     "validator": "^13.6.0"
   },
   "devDependencies": {

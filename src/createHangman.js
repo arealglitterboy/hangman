@@ -14,22 +14,22 @@ export default (word = "", numberOfGuesses = 5) => {
             }
 
             if (guessesLeft > 0 && !wasPastGuess(letter)) {
-                const inWord = word.match(new RegExp(letter, "gi"));
+                const inWord = word.search(new RegExp(letter, "gi")) >= 0;
                 pastGuesses = [ ...pastGuesses, { letter, inWord } ];
 
-                let result = {};
+                let result = { inWord };
                 
                 if (!inWord && --guessesLeft === 0) { // If the letter is not in the word, and this was the last guess
-                    result = { result: 'lost', word };
+                    result = { inWord, result: 'lost', word };
                 } else if (word.search(guessesRegExp()) === -1) { // If all the letters in the word have been guessed
-                    result = { result: 'won', word };
+                    result = { inWord, result: 'won', word };
                 }
                 
                 return result;
             }
         },
         get word() {
-            return word.replace(guessesRegExp(), '*');
+            return (guessesLeft > 0) ? word.replace(guessesRegExp(), '*') : word;
         },
         get guessesLeft() {
             return guessesLeft;
