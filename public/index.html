@@ -6,27 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hangman</title>
 
-    <link rel="stylesheet" href="styles/hangman.css">
+    <!-- <link rel="stylesheet" href="styles/hangman.css"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@600&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="images/favicon-2.svg" type="image/x-icon">
 </head>
 <body>
-    <div id="loading" class="loading loading--in-process">
+    <aside id="loading" class="loading loading--in-process">
         <p class="loading__message">Loading...</p>
-    </div>
-    <div class="holder">
-        <h1 id="logo" class="logo">Hangman</h1>
-        
-        <article id="hangman" class="hangman">
-            <p id="hangman__guesses-left" class="hangman__guesses-left">Guesses Left: <span id="hangman__guesses-left__value"></span></p>
-            <h4 id="hangman__word" class="hangman__word"></h4>
+    </aside>
+    <main class="holder">
+        <header>
+            <h1 id="logo" class="logo">Hangman</h1>
             <button id="hangman__reset" class="hangman__reset">Reset</button>
+        </header>
+        <article id="hangman" class="hangman">
+            <section>
+                <p id="hangman__guesses-left" class="hangman__guesses-left">Guesses Left: <span id="hangman__guesses-left__value"></span></p>
+                <output id="hangman__word" class="hangman__word"></output>
+            </section>
+
+            <article class="hangman__keys" id="keys"></article>
+
             <section id="hangman__past-guesses" class="hangman__past-guesses"></section>
-            <footer id="hangman__results" class="hangman__results"></footer>
         </article>
-    </div>
+        <footer id="hangman__results" class="hangman__results"></footer>
+    </main>
 
     <script src="scripts/bundle.js"></script>
 </body>

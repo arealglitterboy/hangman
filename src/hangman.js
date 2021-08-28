@@ -14,7 +14,8 @@ export default class Hangman {
         this.results = main.querySelector('#hangman__results');
 
         window.addEventListener('keydown', (e) => {
-            if (e.key.match(/[a-z]/i)) {
+            console.log(e);
+            if (e.key.length == 1 && e.key.match(/[a-z]/i)) {
                 this.updateGuesses(e.key.toLocaleLowerCase());
             }
         });
@@ -83,7 +84,6 @@ export default class Hangman {
             }
             this.render();
         }
-        
     }
 
     render() {

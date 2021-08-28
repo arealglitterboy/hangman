@@ -2,16 +2,14 @@
 
 import Hangman from './hangman';
 import requestPuzzle from './request';
-import { isEmail } from 'validator';
+import Keys from './keys';
 
-const email = "benwbrown1029@gmail.com";
-
-console.log(email, `is ${isEmail(email) ? '' : 'not'} an email.`);
+import "./style/styles.scss";
 
 let game;
 
-if ('ontouchstart' in document.documentElement) {
-    console.log('its a tippy tappy device');
+if (/Mobi|Android/.test(navigator.userAgent)) {
+    console.log('This is a mobile device.');
 }
 
 const getPuzzle = async () => {
@@ -35,6 +33,7 @@ const restartGame = async () => {
 const loading = document.getElementById('loading');
 const reset = document.getElementById('hangman__reset');
 const header = document.getElementById('logo');
+const keys = new Keys(document.getElementById('keys'));
 
 startGame();
 

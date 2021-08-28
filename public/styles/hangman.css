@@ -1,7 +1,6 @@
 :root {
   --ff-primary: "Roboto", arial, sans-serif;
   --ff-accent: "Atkinson Hyperlegible";
-  /* --ff-accent: "IBM Plex Mono", "Atkinson Hyperlegible"; */
   --ff-code: "JetBrains Mono", "Inconsolata", "Roboto Mono";
   --fs-h1: 2rem;
   --fs-h2: 1.4rem;

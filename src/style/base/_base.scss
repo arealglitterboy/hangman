@@ -1,0 +1,46 @@
+@use 'fonts';
+@use 'colour';
+
+:root {
+    --fs-h1: 2rem;
+    --fs-h2: 1.4rem;
+    --fs-h3: 1.1rem;
+    --fs-body-1: 1rem;
+    --fs-body-2: 0.8rem;
+    --fs-button-1: 1.7rem;
+    --fs-button-2: 1.3rem;
+  
+    --body-width: min(50rem, 90vw);
+  }
+  
+  body {
+    background-color: var(--background);
+    font-family: var(--ff-primary);
+    color: var(--primary-dark-1);
+    max-width: 100vw;
+  }
+  
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
+    font-family: var(--ff-accent);
+    font-size: var(--fs-h1);
+    letter-spacing: -0.025em;
+    font-weight: 700;
+  }
+  
+  p {
+    font-family: var(--ff-primary);
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  
+  mark {
+    background-color: var(--highlight);
+  }
