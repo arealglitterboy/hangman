@@ -1,16 +1,17 @@
 @use "../base/fonts";
 
-.swal-modal {
-    font-family: var(--ff-accent);
-}
-
 .swal-title {
     padding: 0.4rem;
+    font-family: var(--ff-accent);
     &:first-child {
         margin-top: 1rem;
     }
 }
 
+.swal-text {
+    font-family: var(--ff-primary);
+    text-align: center;
+}
 .swal-footer {
     padding: 0.4rem;
 }

@@ -2,22 +2,15 @@
 @use 'colour';
 
 :root {
-  --fs-h1: 2rem;
+  --fs-h1: 2.75rem;
   --fs-h2: 1.4rem;
   --fs-h3: 1.1rem;
   --fs-body-1: 1rem;
   --fs-body-2: 0.8rem;
-  --fs-button-1: 1.7rem;
+  --fs-button-1: 1.2rem;
   --fs-button-2: 1rem;
 
   --body-width: min(50rem, 100vw);
-}
-
-body {
-  background-color: var(--background);
-  font-family: var(--ff-primary);
-  color: var(--primary-dark-1);
-  max-width: 100vw;
 }
 
 *, *::before, *::after {
@@ -33,16 +26,8 @@ h1 {
   font-weight: 700;
 }
 
-p {
-  font-family: var(--ff-primary);
-}
-
 button {
   cursor: pointer;
-}
-
-mark {
-  background-color: var(--highlight);
 }
 
 svg {

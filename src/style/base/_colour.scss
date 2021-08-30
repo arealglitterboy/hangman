@@ -1,10 +1,15 @@
 :root {
-    --accent: #390040;
-    --error: #D33F49;
-    --highlight: #32E875;
-    --primary-dark-1: #252524;
-    --primary-dark-2: #31302f;
-    --primary-light-1: #969595;
-    --primary-light-2: #adadad;
-    --background: #F6F0ED;
+    --col-primary: hsl(120, 100%, 98%);
+    
+    --col-black: hsl(196, 10%, 20%);
+
+    --col-secondary: hsl(196, 31%, 49%);
+    --col-secondary--darker: hsl(207, 59%, 16%);
+    --col-secondary--lighter: hsl(192, 51%, 75%);
+    
+    --col-negative: hsl(355, 49%, 52%);
+    --col-negative--darker: rgb(139, 44, 52);
+    --col-negative--lighter: rgb(235, 177, 183);
+
+    --col-positive: hsl(133, 65%, 40%);
 }

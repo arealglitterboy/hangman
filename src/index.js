@@ -16,7 +16,7 @@ const getPuzzle = async () => (requestPuzzle());
 const startGame = async () => {
     const close = loading();
     const puzzle = await getPuzzle();
-    game = new Hangman(puzzle, document.getElementById('hangman'), message);
+    game = new Hangman(puzzle, document.getElementById('word'), document.getElementById('guesses-left'), message);
     keys.init((letter) => game.updateGuesses(letter));
     close();
 };
@@ -42,4 +42,3 @@ const message = gameAlert(restartGame);
 startGame();
 
 document.getElementById('reset').addEventListener('click', restartGame);
-document.getElementById('logo').addEventListener('click', restartGame);

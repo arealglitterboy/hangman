@@ -16,21 +16,24 @@
     <main class="holder">
         <header class="header">
             <h1 id="logo" class="header__logo">Hangman</h1>
-            <button id="reset" class="header__reset">Reset</button>
         </header>
-        <article id="hangman" class="hangman">
-            <figure class="hangman__image">
+            
+        <figure class="hangman__image">
+            <picture id="image" class="hangman__image__container">
                 <img src="images/hangman-test-1.svg" alt=""> <!-- ! This is temporary, will be changing/stacked image later -->
-                <figcaption id="hangman__guesses-left" class="hangman__guesses-left">Guesses Left: <span id="hangman__guesses-left__value"></span></figcaption>
-            </figure>
+            </picture>
+            
+            <!-- ! Maybe break this out and have the desktop version have the keyboard, word, and guesses + reset on the right with image full height on left. -->
+            <figcaption class="hangman__image__caption">
+                <p class="hangman__image__caption__guesses-left">Guesses Left: <span id="guesses-left"></span></p>
+                <button id="reset" class="hangman__image__caption__reset">Reset</button>
+            </figcaption>
+        </figure>
+        
+        
+        <output id="word" class="hangman__word"></output>
 
-            <output id="hangman__word" class="hangman__word"></output>
-
-            <article class="hangman__keys" id="keys"></article>
-
-            <section id="hangman__past-guesses" class="hangman__past-guesses"></section>
-        </article>
-        <footer id="hangman__results" class="hangman__results"></footer>
+        <article class="hangman__keys" id="keys"></article>
     </main>
 
     <script src="scripts/bundle.js"></script>

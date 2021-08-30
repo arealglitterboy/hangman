@@ -5,13 +5,11 @@ import createHangman from './createHangman';
 // ! Next update try to redo the render pipeline so that
 
 export default class Hangman {
-    constructor(word, main, onGameEnd = () => {}) {
-        this.main = main;
-
+    constructor(word, wordHolder, guessesHolder, onGameEnd = () => {}) {
         this.game = createHangman(word); // ! This doesn't have a guessesLeft argument, inconsistent.
 
-        this.revealed = main.querySelector('#hangman__word');
-        this.guessesRemaining = main.querySelector('#hangman__guesses-left__value');
+        this.wordHolder = wordHolder;
+        this.guessesHolder = guessesHolder;
 
         this.onGameEnd = onGameEnd;
 
@@ -57,7 +55,7 @@ export default class Hangman {
     }
 
     render() {
-        this.revealed.replaceChildren(...this.createWordSegments(this.game.word));
-        this.guessesRemaining.textContent = this.game.guessesLeft;
+        this.wordHolder.replaceChildren(...this.createWordSegments(this.game.word));
+        this.guessesHolder.textContent = this.game.guessesLeft;
     }
 }
