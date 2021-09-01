@@ -16,17 +16,17 @@ const getPuzzle = async () => (requestPuzzle());
 const startGame = async () => {
     const close = loading();
     const puzzle = await getPuzzle();
-    game = new Hangman(puzzle, document.getElementById('word'), document.getElementById('guesses-left'), message);
+    game = new Hangman(puzzle, document.getElementById('word'), document.getElementById('guesses-left'), document.getElementById('hangman-image'), message);
     keys.init((letter) => game.updateGuesses(letter));
     close();
 };
 
 const restartGame = async () => {
-    const close = loading();
+    // const close = loading();
     const puzzle = await getPuzzle();
-    game.restart(puzzle, 5);
+    game.restart(puzzle);
     keys.reset();
-    close();
+    // close();
 }
 
 window.addEventListener('keydown', (e) => {

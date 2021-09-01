@@ -5,26 +5,41 @@ import createHangman from './createHangman';
 // ! Next update try to redo the render pipeline so that
 
 export default class Hangman {
-    constructor(word, wordHolder, guessesHolder, onGameEnd = () => {}) {
-        this.game = createHangman(word); // ! This doesn't have a guessesLeft argument, inconsistent.
+    static parts = ['face', 'torso', 'left-arm', 'right-arm', 'left-leg', 'right-leg'];
+    static guesses = this.parts.length;
 
+    /**
+     * 
+     * @param {string} word 
+     * @param {HTMLElement} wordHolder 
+     * @param {*} guessesHolder 
+     * @param {HTMLElement} hangmanImage
+     * @param {() => {}} onGameEnd 
+     */
+    constructor(word, wordHolder, guessesHolder, hangmanImage, onGameEnd = () => {}) {
+        this.game = createHangman(word, Hangman.guesses);
+        
         this.wordHolder = wordHolder;
+        this.wordHolder.classList.add('word');
+
         this.guessesHolder = guessesHolder;
+        this.hangmanImage = hangmanImage;
 
         this.onGameEnd = onGameEnd;
 
         this.render();
     }
 
-    restart(word, guessesLeft = 5) {
-        this.game = createHangman(word, guessesLeft);
+    restart(word) {
+        this.game = createHangman(word, Hangman.guesses);
+        this.hangmanImage.dataset.hanged = "";
         this.render();
     }
 
     createLetterElement(letter) {
         const element = document.createElement('p');
         element.textContent = letter;
-        element.className = "hangman__word__segment__letter";
+        element.className = "word__segment__letter";
         return element;
     }
 
@@ -34,7 +49,7 @@ export default class Hangman {
         return arr.map((segment) =>  {
             const span = document.createElement('span');
             
-            span.className = "hangman__word__segment";
+            span.className = "word__segment";
             span.append(...segment.split('').map(this.createLetterElement));
 
             return span;
@@ -45,6 +60,9 @@ export default class Hangman {
         const response = this.game.guess(letter);
 
         if (response) {
+            if (!response.inWord) {
+                this.hangmanImage.dataset.hanged = Hangman.parts.slice(0, Hangman.guesses - this.game.guessesLeft).join(' ');
+            }
             if (response.result) {
                 this.onGameEnd(response);
             }

@@ -1,0 +1,67 @@
+.info {
+	display: flex;
+	width: min(20rem, 100%);
+	height: min-content;
+	padding-inline: 1em;
+	grid-area: info;
+
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items: baseline;
+
+	&__guesses-left {
+		color: var(--col-grey);
+		font-size: var(--fs-body-2);
+		font-weight: 500;
+		font-style: italic;
+	}
+
+	&__reset {
+		position: relative;
+
+		background-color: var(--col-negative--darker);
+
+		font: 600 var(--fs-button-1)/1 var(--ff-accent);
+		width: 5em;
+		height: 2em;
+		margin: 0.2em;
+
+		border: none;
+		border-radius: 0.6em;
+
+		/* Top of the button */
+		&::before {
+			content: 'Reset';
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			position: absolute;
+			inset: 0 0;
+
+			width: inherit;
+			height: inherit;
+
+			border-radius: inherit;
+
+			background-color: var(--col-negative);
+			color: var(--col-primary);
+
+			transform: translate(-0.13em, -0.15em);
+			// transform: translateY(-0.2em);
+			transition-duration: 150ms;
+			transition-delay: 200ms;
+			transition-timing-function: cubic-bezier(0.65, 0, 0.4, 0.8);
+		}
+
+		&:active::before {
+			filter: brightness(80%) saturate(120%);
+			transform: translate(-0.035em, -0.07em);
+			// transform: translateY(-0.07em);
+			transition-duration: 150ms;
+			transition-delay: initial;
+
+			background-color: var(--col-negative);
+		}
+	}    
+}

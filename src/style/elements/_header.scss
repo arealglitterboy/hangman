@@ -1,0 +1,7 @@
+.header {
+    grid-area: header;
+    height: min-content;
+    &__logo {
+        text-align: center;
+    }
+}

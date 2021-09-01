@@ -9,28 +9,29 @@ body {
 }
 
 .holder {
-    height: 100vh;
-    width: min(50rem, 95vw);
-    max-width: 100%;
-    margin: 0 auto;
     display: grid;
-    grid-template-rows: 1fr 7fr;
+    
+    height: 100vh;
+    max-height: 100vh;
+    width: min(70rem, 100vw);
+    max-width: 100%;
+    
+    margin: 0 auto;
+    
+    grid-template-areas: "header header"
+                         "image image"
+                         "info info"
+                         "word word"
+                         "keys keys";
+    grid-auto-rows: auto minmax(0, 1fr) auto auto auto;
+    grid-auto-columns: minmax(0, 1fr) auto;
+    gap: 1rem;
     justify-content: center;
     justify-items: center;
-    align-items:flex-end;
-    gap: 1rem;
 
-    /* padding: 1rem 2rem; */
-}
-
-.header {
-    display: flex;
-    flex-flow: column wrap;
-    gap: 0.5em;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    &__logo {
-        cursor: pointer;
+    @media screen and (orientation: landscape) {
+        grid-template-areas: "header header" "image info" "image word" "image keys";
+        grid-auto-rows: auto auto minmax(0, 1fr) auto;
+        align-items: center;
     }
 }

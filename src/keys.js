@@ -49,7 +49,7 @@ customElements.define("key-button", Key, { extends: 'button' });
 export default class Keys {
     static createRow = (letters) => {
         const row = document.createElement('section');
-        row.classList.add('hangman__keys__row');
+        row.classList.add('keys__row');
         row.append(...letters);
         return row;
     };
@@ -63,6 +63,7 @@ export default class Keys {
     */
     constructor(main, locale="en") {
         this.main = main;
+        this.main.classList.add('keys');
 
         locale = (locale in keysets) ? locale : 'en'; // Make sure that this locale is supported, otherwise, default to english.
         this.letters = keysets[locale].map(Keys.createKeys); // Map each letter in the keyset array to an instance of key

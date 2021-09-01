@@ -1,0 +1,32 @@
+@use "../base/base";
+
+.word {
+    display: flex;
+    grid-area: word;
+    flex-flow: row wrap;
+    justify-content: center;
+    
+    height: min-content;
+
+    font-family: var(--ff-accent);
+    font-size: var(--fs-h3);
+    font-weight: 600;
+  
+    margin-block-end: 1rem;
+    color: var(--col-black);
+
+    &__segment {
+      display: block;
+      width: max-content;
+      margin: 0.2em 0.5rem;
+
+      &__letter {
+        display: inline-block;
+        padding-inline: 0.1em;
+        text-align: center;
+        margin-inline: 0.25em;
+        border-bottom: solid var(--col-black) 0.1em;
+        width: 0.75em;
+      }
+    }
+  }

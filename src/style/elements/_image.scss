@@ -1,0 +1,40 @@
+.image {
+	display: flex;
+	justify-content: center;
+	grid-area: image;
+	height: 100%;
+	width: auto;
+
+	&__svg {
+		fill: none;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke: #000;
+
+		.body-part, .gallows {
+			stroke-width: 6;
+		}
+
+		.mouth-and-eyes {
+			stroke-width: 2.5;
+		}
+		
+		& > *:not(.gallows) {
+			visibility: hidden;
+		}
+		
+		&[data-hanged~="face"] .face,
+		&[data-hanged~="torso"] .torso,
+		&[data-hanged~="left-arm"] .left-arm,
+		&[data-hanged~="right-arm"] .right-arm,
+		&[data-hanged~="left-leg"] .left-leg,
+		&[data-hanged~="right-leg"] .right-leg {
+			visibility: visible;
+		}
+	}
+	
+	@media screen and (orientation: landscape) {
+		padding: 0.25em 0.5em;
+	}
+}
+

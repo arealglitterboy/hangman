@@ -1,0 +1,71 @@
+@use "../base/base";
+
+.keys {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75em;
+
+	grid-area: keys;
+	width: min(35rem, 100vw);
+	height: max-content;
+	padding-block: 1em 1.25em;
+
+	background-color: var(--col-secondary);
+	border-radius: 0.4em;
+
+	&__row {
+		display: flex;
+		justify-content: center;
+		flex-flow: row wrap;
+		gap: 1.5%;
+		width: 100%;
+		
+		& .key {
+			--border-1: solid 0.15em var(--col-secondary--darker);
+			--border-2: solid 0.115em var(--col-secondary--darker);
+			
+			display: inline-flex;
+			flex: 1 1 100%;
+			justify-content: flex-start;
+			align-items: flex-start;
+			flex-direction: column;
+
+			background-color: var(--col-secondary--lighter);
+			color: var(--col-secondary--darker);
+
+			border: none;
+			border-bottom: var(--border-1);
+			border-right: var(--border-2);
+			border-radius: 0.3em;
+
+			font: 700 var(--fs-button-2)/1 var(--ff-accent);
+
+			padding: 0.2em 0.4em;
+			max-width: 8%;
+			height: 2.75em;
+
+			transition-property: border filter;
+			transition: 100ms ease-out 0s;
+
+			&[data-clicked=incorrect] {
+				color: var(--col-negative, red);
+			}
+			
+			&[data-clicked=correct] {
+				color: var(--col-positive, lime);
+			}
+			
+			&:disabled {
+				filter: brightness(80%) saturate(120%);
+				border-top: var(--border-1);
+				border-left: var(--border-2);
+				border-bottom-width: 0em;
+				border-right-width: 0em;
+			}
+
+			&:focus-visible {
+				filter: brightness(110%) saturate(90%);
+			}
+		}
+	}
+}
