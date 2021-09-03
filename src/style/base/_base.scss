@@ -3,14 +3,20 @@
 
 :root {
   --fs-h1: 2.75rem;
-  --fs-h2: 1.4rem;
   --fs-h3: 1.1rem;
-  --fs-body-1: 1rem;
-  --fs-body-2: 0.9rem;
+  --fs-body: 0.9rem;
   --fs-button-1: 1.3rem;
   --fs-button-2: 1rem;
 
   --body-width: min(50rem, 100vw);
+
+  @media screen and (min-width: 700px) and (min-height: 700px) {
+    --fs-h1: 3.5rem;
+    --fs-h3: 2rem;
+    --fs-button-1: 1.65rem;
+    --fs-button-2: 1.35rem;
+    --fs-body: 1.4rem;
+  }
 }
 
 *, *::before, *::after {

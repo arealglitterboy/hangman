@@ -20,18 +20,23 @@ body {
     
     grid-template-areas: "header header"
                          "image image"
-                         "info info"
+                         "reset reset"
                          "word word"
                          "keys keys";
     grid-auto-rows: auto minmax(0, 1fr) auto auto auto;
-    grid-auto-columns: minmax(0, 1fr) auto;
+    grid-auto-columns: 1fr minmax(0, 2fr);
     gap: 1rem;
     justify-content: center;
     justify-items: center;
 
     @media screen and (orientation: landscape) {
-        grid-template-areas: "header header" "image info" "image word" "image keys";
+        grid-template-areas: "header header" "image reset" "image word" "image keys";
         grid-auto-rows: auto auto minmax(0, 1fr) auto;
         align-items: center;
+
+        @media (max-height: 500px) {
+            grid-template-areas: "header reset" "image word" "image keys";
+            grid-auto-rows: auto minmax(0, 1fr) auto;
+        }
     }
 }

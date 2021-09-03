@@ -68,7 +68,7 @@ export default class Keys {
         locale = (locale in keysets) ? locale : 'en'; // Make sure that this locale is supported, otherwise, default to english.
         this.letters = keysets[locale].map(Keys.createKeys); // Map each letter in the keyset array to an instance of key
 
-        this.main.append(...this.letters.map((row) => Keys.createRow(row))); // Instantiate main with rows of keys
+        this.main.append(...this.letters.map(Keys.createRow)); // Instantiate main with rows of keys
     }
 
     init = (callBack) => this.forEach(key => key.init(callBack));

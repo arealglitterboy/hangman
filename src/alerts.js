@@ -22,11 +22,7 @@ export const gameAlert = (restartGame) => {
         }
     });
 
-    return (gameEnd) => {
-        if (gameEnd.result === 'lost') {
-            gameAlert("No Guesses Left", `${gameEnd.word} was really hard. Better luck next time.`, "error");
-        } else {
-            gameAlert("Congratulations!", `${gameEnd.word}?? You made it look easy!`, "success");
-        }
-    }
+    return (gameEnd) => (gameEnd.result === 'lost')
+            ? gameAlert("No Guesses Left", `${gameEnd.word} was really hard. Better luck next time.`, "error")
+            : gameAlert("Congratulations!", `${gameEnd.word}?? You made it look easy!`, "success");
 };

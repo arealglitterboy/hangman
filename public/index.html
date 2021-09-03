@@ -16,21 +16,17 @@
     <main class="holder">
         <header class="header">
             <h1 class="header__logo">Hangman</h1>
+            <!-- This is kept inside a <header> tag in case I want to insert a nav bar -->
         </header>
             
         <figure class="image">
-            <!-- ! What if we put the number of guesses left back in here as the figure caption, but **leave** the button outside, where it is. Maybe give it an alt attribute explaining what it is -->
-            <!-- Having anything else inside of this element might prove a pain in the ass, look in to using flex box and just use flex grow on the svg. -->
-
             <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 136.85 223.13" class="image__svg" id="hangman-image" data-hanged="">            
                 <g id="face" data-name="Face" class="body-part face">
                     <path d="M133.85 66c0 6.35-3.22 11.31-7.38 15.47s-9.12 7.85-15.47 7.85-11.69-3.31-15.85-7.46-8.52-9.51-8.52-15.86 3.88-12.14 8-16.33 10-8 16.33-8 11.82 4.15 16 8.32A22.36 22.36 0 0 1 133.85 66z" />
                     <path d="M107.88 63.5a4.1 4.1 0 0 1-4.38 4.12c-2.49 0-4.93-1.64-4.93-4.12a5 5 0 0 1 4.93-4.64 4.52 4.52 0 0 1 4.38 4.64zM125.04 63.5c0 2.48-2.06 4-4.54 4s-4.7-1.56-4.7-4a4.52 4.52 0 0 1 4.7-4.32 4.38 4.38 0 0 1 4.54 4.32zM99.33 76.37c2.34-1.18 5.46.28 7.88.11a15.37 15.37 0 0 1 7 1.13 13.4 13.4 0 0 1 5.94 3.75" class="mouth-and-eyes"/>
                 </g>
             
-                <g class="body-part">
-                    <path id="torso" d="M111.23 89c0 13.5-1 13.5-1 27s1.29 13.5 1.29 27" data-name="Torso" class="body-part torso"/>
-                </g>
+                <path id="torso" d="M111.23 89c0 13.5-1 13.5-1 27s1.29 13.5 1.29 27" data-name="Torso" class="body-part torso"/>
             
                 <path id="left arm" d="M115.49 98.86c2.17 7.66.73 8.07 2.89 15.73s3.63 7.26 5.8 14.93 1.32 7.9 3.49 15.57" class="body-part left-arm" data-name="Left Arm"/>
                 
@@ -46,15 +42,11 @@
                     <path d="M111.44 3c0 19 .89 19 .89 38"/>
                 </g>
             </svg>
-            <!-- <figcaption>
-                <p class="image__guesses-left">Guesses Left: <span id="guesses-left"></span></p>
-            </figcaption> -->
+
+            <figcaption class="image__guesses-left">Guesses Left: <span id="guesses-left"></span></figcaption>
         </figure>
 
-        <section class="info">
-            <p class="info__guesses-left">Guesses Left: <span id="guesses-left"></span></p>
-            <button id="reset" class="info__reset">Reset</button>
-        </section>
+        <button id="reset" class="reset">Reset</button>
         
         <output id="word" class="word"></output>
 

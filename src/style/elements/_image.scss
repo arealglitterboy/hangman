@@ -1,8 +1,11 @@
 .image {
 	display: flex;
 	justify-content: center;
+	align-items: center;
+	gap: 1em;
+	flex-flow: column nowrap;
 	grid-area: image;
-	height: 100%;
+	height: min(50rem, 100%);
 	width: auto;
 
 	&__svg {
@@ -10,6 +13,8 @@
 		stroke-linecap: round;
 		stroke-linejoin: round;
 		stroke: #000;
+		flex-grow: 1;
+		height: 100%;
 
 		.body-part, .gallows {
 			stroke-width: 6;
@@ -18,9 +23,34 @@
 		.mouth-and-eyes {
 			stroke-width: 2.5;
 		}
+
+		.face {
+			transform: translate(0.4em, -0.75em);
+		}
+
+		.torso {
+			transform: translate(0.85em, 0.3em);
+		}
+
+		.left-arm {
+			transform: translate(0.5em, -0.65em);
+		}
+
+		.right-arm {
+			transform: translate(-0.5em, -0.65em);
+		}
+
+		.left-leg {
+			transform: translate(0.6em, -0.55em);
+		}
+
+		.right-leg {
+			transform: translate(-0.6em, 0.55em);
+		}
 		
 		& > *:not(.gallows) {
-			visibility: hidden;
+			opacity: 0;
+			transition: all 200ms cubic-bezier(.18,.89,.32,1.28) 50ms; 
 		}
 		
 		&[data-hanged~="face"] .face,
@@ -29,8 +59,16 @@
 		&[data-hanged~="right-arm"] .right-arm,
 		&[data-hanged~="left-leg"] .left-leg,
 		&[data-hanged~="right-leg"] .right-leg {
-			visibility: visible;
+			opacity: 1;
+			transform: translate(0, 0);
 		}
+	}
+
+	&__guesses-left {
+		color: var(--col-grey);
+		font-size: var(--fs-body);
+		font-weight: 450;
+		font-style: italic;
 	}
 	
 	@media screen and (orientation: landscape) {

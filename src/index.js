@@ -22,11 +22,9 @@ const startGame = async () => {
 };
 
 const restartGame = async () => {
-    // const close = loading();
     const puzzle = await getPuzzle();
-    game.restart(puzzle);
+    game.start(puzzle);
     keys.reset();
-    // close();
 }
 
 window.addEventListener('keydown', (e) => {

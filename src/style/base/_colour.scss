@@ -1,17 +1,16 @@
 :root {
     --col-primary: hsl(54, 100%, 96%);
-    // --col-primary: hsl(120, 100%, 98%);
 
     --col-black: hsl(196, 10%, 20%);
     --col-grey: hsl(198, 7%, 61%);
 
     --col-secondary: hsl(196, 57%, 51%);
-    --col-secondary--darker: hsl(236, 54%, 21%); //hsl(207, 59%, 16%)
-    --col-secondary--lighter: hsl(184, 63%, 82%); //hsl(192, 51%, 75%)
+    --col-secondary--darker: hsl(236, 54%, 21%);
+    --col-secondary--lighter: hsl(184, 63%, 82%);
     
     --col-negative: hsl(355, 49%, 52%);
-    --col-negative--darker: hsl(323, 59%, 28%); //hsl(355, 52%, 36%)
-    --col-negative--lighter: hsl(19, 59%, 81%); //hsl(354, 59%, 81%)
+    --col-negative--darker: hsl(323, 59%, 28%);
+    --col-negative--lighter: hsl(19, 59%, 81%);
 
     --col-positive: hsl(133, 65%, 40%);
 }

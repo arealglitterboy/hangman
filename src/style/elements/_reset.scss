@@ -1,0 +1,48 @@
+@use "../base/base";
+
+.reset {
+	grid-area: reset;
+	position: relative;
+	
+	background-color: var(--col-negative--darker);
+	
+	font: 600 var(--fs-button-1)/1 var(--ff-accent);
+	width: 5em;
+	height: 2em;
+
+	border: none;
+	border-radius: 0.6em;
+
+	transition: 150ms cubic-bezier(0.65, 0, 0.4, 0.8) 200ms;
+
+	/* Top of the button */
+	&::before {
+		content: 'Reset';
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		position: absolute;
+		inset: 0 0;
+
+		width: inherit;
+		height: inherit;
+
+		border-radius: inherit;
+
+		background-color: var(--col-negative);
+		color: var(--col-primary);
+		
+		transition-timing-function: inherit;
+		transform: translate(-0.13em, -0.15em);
+	}
+
+	&:active::before {
+		filter: brightness(80%) saturate(120%);
+		transform: translate(-0.035em, -0.07em);
+		transition-duration: 150ms;
+		transition-delay: initial;
+
+		background-color: var(--col-negative);
+	}
+}

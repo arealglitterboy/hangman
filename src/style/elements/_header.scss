@@ -1,6 +1,10 @@
 .header {
     grid-area: header;
+    display: flex;
+    flex-flow: row wrap;
     height: min-content;
+    padding-block: 0.25em;
+    
     &__logo {
         text-align: center;
     }
