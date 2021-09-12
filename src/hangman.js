@@ -61,19 +61,21 @@ export default class Hangman {
     }
 
     updateGuesses(letter) {
-        const response = this.game.guess(letter);
-
-        if (response && !this.gameOver) {
-            if (!response.inWord) {
-                this.hangmanImage.dataset.hanged = Hangman.parts.slice(0, Hangman.guesses - this.game.guessesLeft).join(' ');
+        if (!this.gameOver) {
+            const response = this.game.guess(letter);
+    
+            if (response) {
+                if (!response.inWord) {
+                    this.hangmanImage.dataset.hanged = Hangman.parts.slice(0, Hangman.guesses - this.game.guessesLeft).join(' ');
+                }
+                if (response.result) {
+                    this.gameOver = true;
+                    this.onGameEnd(response);
+                }
+                this.render();
+    
+                return response.inWord;
             }
-            if (response.result) {
-                this.gameOver = true;
-                this.onGameEnd(response);
-            }
-            this.render();
-
-            return response.inWord;
         }
     }
 

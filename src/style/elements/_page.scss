@@ -38,5 +38,9 @@ body {
             grid-template-areas: "header reset" "image word" "image keys";
             grid-auto-rows: auto minmax(0, 1fr) auto;
         }
+
+        @media (min-height: 600px) {
+            padding-block-end: 1em;
+        }
     }
 }

@@ -8,7 +8,7 @@
     "build": "webpack --mode production",
     "serve": "webpack serve --mode development"
   },
-  "author": "Ben Brown",
+  "author": "arealglitterboy",
   "license": "ISC",
   "dependencies": {
     "@babel/cli": "^7.14.8",
@@ -17,7 +17,6 @@
     "babel-loader": "^8.2.2",
     "babel-preset-env": "^1.7.0",
     "core-js": "^3.16.2",
-    "live-server": "^1.2.1",
     "regenerator-runtime": "^0.13.9",
     "sweetalert": "^2.1.2",
     "validator": "^13.6.0"
